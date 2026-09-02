@@ -1,0 +1,10 @@
+<article class="prose">
+  <p class="crumbs"><a href="/videos/">Videos</a></p>
+  <h1>{{ title }}</h1>
+  {% if youtube_id %}
+  <div class="video-wrap">
+    <iframe src="https://www.youtube.com/embed/{{ youtube_id }}" title="{{ title }}" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+  </div>
+  {% endif %}
+  {{ content | safe }}
+</article>

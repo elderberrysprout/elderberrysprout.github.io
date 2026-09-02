@@ -1,0 +1,26 @@
+<article class="product">
+  <div>
+    <p class="crumbs"><a href="/shop/">Shop</a> › {{ title }}</p>
+    {% if images %}
+    <div class="gallery">
+      {% for src in images %}
+      <img src="{{ src }}" alt="{{ title }}">
+      {% endfor %}
+    </div>
+    {% elif image %}
+    <img src="{{ image }}" alt="{{ title }}">
+    {% endif %}
+  </div>
+  <div>
+    <h1>{{ title }}</h1>
+    {% if sold_out %}<p class="sold">Sold Out</p>{% endif %}
+    {% if price %}<p class="price" style="font-size:1.3rem">{{ price }}</p>{% endif %}
+    <p class="note">
+      This catalog is from the original Elderberry Sprout shop. There is no cart on GitHub.
+      Email <a href="mailto:{{ site.email }}?subject={{ title | urlencode }}">{{ site.email }}</a>
+      to inquire, or see if it is listed on
+      <a href="{{ site.etsy }}">Etsy</a>.
+    </p>
+    <div class="prose" style="width:auto;margin:0">{{ content | safe }}</div>
+  </div>
+</article>

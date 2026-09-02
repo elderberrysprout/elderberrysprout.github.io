@@ -1,0 +1,13 @@
+<article class="prose">
+  <p class="crumbs"><a href="/free-digital-downloads/">Freebies</a></p>
+  <h1>{{ title }}</h1>
+  {{ content | safe }}
+  {% if files %}
+  <h2>Download</h2>
+  <ul>
+    {% for f in files %}
+    <li><a href="{{ f }}">{{ f.split('/')[-1] }}</a></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</article>

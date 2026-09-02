@@ -1,0 +1,18 @@
+<div class="page-hero"><div class="wrap"><h1>{{ heading }}</h1></div></div>
+<div class="wrap band">
+  {% if note %}<p class="note">{{ note }}</p>{% endif %}
+  <div class="grid">
+    {% for item in items %}
+    <article class="card">
+      {% if item.image %}<a href="{{ item.permalink }}"><img src="{{ item.image }}" alt="{{ item.title }}"></a>{% endif %}
+      <div class="card-body">
+        {% if item.sold_out %}<div class="sold">Sold Out</div>{% endif %}
+        <h3><a href="{{ item.permalink }}">{{ item.title }}</a></h3>
+        {% if kind == 'product' and item.price %}<div class="price">{{ item.price }}</div>{% endif %}
+        {% if item.date %}<div class="meta">{{ item.date }}</div>{% endif %}
+        {% if item.excerpt %}<p>{{ item.excerpt }}</p>{% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</div>

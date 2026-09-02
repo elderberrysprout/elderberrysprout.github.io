@@ -1,0 +1,46 @@
+<section class="hero" style="background-image: url('{{ site.hero }}');">
+  <div class="wrap">
+    <h1>Magical Tools for Magical Folks.</h1>
+    <p>Love infused beeswax candles for your spiritual practice</p>
+    <a class="btn" href="/shop/">Shop Now</a>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>Shop our favorites</h2>
+    <div class="grid">
+      {% for p in products %}
+      <article class="card">
+        {% if p.image %}<a href="{{ p.permalink }}"><img src="{{ p.image }}" alt="{{ p.title }}"></a>{% endif %}
+        <div class="card-body">
+          {% if p.sold_out %}<div class="sold">Sold Out</div>{% endif %}
+          <h3><a href="{{ p.permalink }}">{{ p.title }}</a></h3>
+          {% if p.price %}<div class="price">{{ p.price }}</div>{% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    <p style="margin-top:1.5rem"><a class="btn btn-ghost" href="/shop/">Explore all Magic Tools</a></p>
+  </div>
+</section>
+
+<section class="band cream">
+  <div class="wrap" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2rem;align-items:center">
+    <div>
+      <h2>Need Magical Ideas?</h2>
+      <p>Don’t know what to do with your new candles? Need magical workings or Grimoire spread ideas? We’ve got you covered. Check out the Magic Blog for inspiration.</p>
+      <a class="btn" href="/magic-blog/">Learn More</a>
+    </div>
+    <div class="grid">
+      {% for post in posts %}
+      <article class="card">
+        <div class="card-body">
+          <div class="meta">{{ post.date }}</div>
+          <h3><a href="{{ post.permalink }}">{{ post.title }}</a></h3>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

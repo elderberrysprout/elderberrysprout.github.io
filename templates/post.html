@@ -1,0 +1,13 @@
+<article class="prose">
+  <p class="crumbs"><a href="/magic-blog/">Magic Blog</a></p>
+  <h1>{{ title }}</h1>
+  <p class="meta">{{ date }} · Written by {{ author or "Marina Smouse" }}</p>
+  {{ content | safe }}
+  {% if tags %}
+  <p>
+    {% for tag in tags %}
+    <a class="tag" href="/magic-blog/tag/{{ tag | lower | replace(' ', '-') }}/">{{ tag }}</a>
+    {% endfor %}
+  </p>
+  {% endif %}
+</article>
