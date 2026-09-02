@@ -100,7 +100,9 @@ def copy_assets() -> None:
     if dest.exists():
         shutil.rmtree(dest)
     shutil.copytree(ASSETS, dest)
-    (SITE / "CNAME").write_text("www.elderberrysprout.com\n", encoding="utf-8")
+    cname = ROOT / "CNAME"
+    if cname.is_file() and cname.read_text(encoding="utf-8").strip():
+        shutil.copy2(cname, SITE / "CNAME")
     (SITE / ".nojekyll").write_text("", encoding="utf-8")
 
 
