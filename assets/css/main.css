@@ -41,6 +41,18 @@ h1, h2, h3, h4 {
   position: sticky;
   top: 0;
   z-index: 10;
+  overflow: visible;
+}
+.site-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: max(32px, calc(100vw * 55 / 1500));
+  margin-top: -8px;
+  background: url("/assets/images/header-tear.png") center top / 100% 100% no-repeat;
+  pointer-events: none;
 }
 .header-inner {
   width: min(1200px, calc(100% - 1.5rem));
