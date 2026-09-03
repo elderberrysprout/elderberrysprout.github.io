@@ -3,12 +3,15 @@
 
 from __future__ import annotations
 
+import hashlib
+import random
 import shutil
 from datetime import date, datetime
 from pathlib import Path
 
 import markdown
 import yaml
+from bs4 import BeautifulSoup, NavigableString
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -71,9 +74,74 @@ def load_dir(folder: Path) -> list[dict]:
     return items
 
 
+def heading_rng(text: str) -> random.Random:
+    seed = int(hashlib.sha256(text.encode("utf-8")).hexdigest()[:16], 16)
+    return random.Random(seed)
+
+
+def mix_heading_text(node: NavigableString, soup: BeautifulSoup, rng: random.Random, prev: bool | None) -> bool | None:
+    text = str(node)
+    if not any(not ch.isspace() for ch in text):
+        return prev
+    pieces: list = []
+    buf: list[str] = []
+
+    def flush() -> None:
+        if buf:
+            pieces.append("".join(buf))
+            buf.clear()
+
+    for ch in text:
+        if ch.isspace():
+            buf.append(ch)
+            continue
+        flush()
+        use_alt = rng.random() < 0.5
+        if prev is not None and use_alt == prev and rng.random() < 0.7:
+            use_alt = not use_alt
+        prev = use_alt
+        if use_alt:
+            span = soup.new_tag("span", attrs={"class": "cardinal-alt"})
+            span.string = ch
+            pieces.append(span)
+        else:
+            buf.append(ch)
+    flush()
+    node.replace_with(*pieces)
+    return prev
+
+
+def mix_headings(html: str) -> str:
+    soup = BeautifulSoup(html, "html.parser")
+    for tag in soup.find_all(["h1", "h2", "h3", "h4"]):
+        if tag.find(class_="cardinal-alt"):
+            continue
+        original = " ".join(tag.get_text().split())
+        rng = heading_rng(original)
+        prev: bool | None = None
+
+        def walk(parent) -> None:
+            nonlocal prev
+            for child in list(parent.children):
+                if isinstance(child, NavigableString):
+                    prev = mix_heading_text(child, soup, rng, prev)
+                elif getattr(child, "name", None):
+                    walk(child)
+
+        walk(tag)
+        tag["data-cardinal-mixed"] = "1"
+        if original:
+            tag["aria-label"] = original
+        for link in tag.find_all("a"):
+            label = " ".join(link.get_text().split())
+            if label:
+                link["aria-label"] = label
+    return str(soup)
+
+
 def write(path: Path, html: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(html, encoding="utf-8")
+    path.write_text(mix_headings(html), encoding="utf-8")
 
 
 def out_path(permalink: str) -> Path:

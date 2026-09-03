@@ -1,3 +1,17 @@
+@font-face {
+  font-family: "Cardinal";
+  src: url("/assets/fonts/cardinal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cardinal Alternate";
+  src: url("/assets/fonts/cardinal-alternate.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 :root {
   --green: #42552e;
   --green-dark: #2d3b1f;
@@ -21,10 +35,14 @@ body {
 img { max-width: 100%; height: auto; }
 a { color: var(--green); }
 h1, h2, h3, h4 {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-weight: 600;
-  line-height: 1.15;
-  letter-spacing: 0.01em;
+  font-family: "Cardinal", Georgia, serif;
+  font-weight: 400;
+  font-synthesis: none;
+  line-height: 1.3;
+  letter-spacing: 0.03em;
+}
+.cardinal-alt {
+  font-family: "Cardinal Alternate", "Cardinal", Georgia, serif;
 }
 .skip {
   position: absolute;
@@ -117,8 +135,10 @@ h1, h2, h3, h4 {
 }
 .hero .wrap { position: relative; z-index: 1; padding: 4rem 0; }
 .hero h1 {
-  font-size: clamp(2.4rem, 6vw, 4.6rem);
-  margin: 0 0 0.4rem;
+  font-size: clamp(2.2rem, 5.4vw, 4.1rem);
+  margin: 0 0 0.4rem 0;
+  margin-left: auto;
+  max-width: min(100%, 16em);
   color: #fff;
 }
 .hero p { font-size: 1.2rem; margin: 0 0 1.5rem; font-weight: 300; }
@@ -166,7 +186,7 @@ section.band { padding: 3.5rem 0; }
   padding: 3rem 0 2.4rem;
   text-align: center;
 }
-.page-hero h1 { margin: 0; font-size: clamp(2rem, 5vw, 3.4rem); color: #fff; }
+.page-hero h1 { margin: 0; font-size: clamp(2rem, 5vw, 3.4rem); color: #fff; padding-block: 0.12em; }
 .prose { width: min(760px, calc(100% - 2rem)); margin: 2.5rem auto 3rem; }
 .prose img { display: block; margin: 1.2rem auto; }
 .prose .gallery {
@@ -191,16 +211,50 @@ section.band { padding: 3.5rem 0; }
   margin: 1rem 0;
 }
 .subscribe {
-  background: var(--cream) url("/assets/images/banner.png") center / cover no-repeat;
+  position: relative;
+  z-index: 2;
+  overflow: visible;
+  background-color: var(--green);
+  background-image: url("/assets/images/header-paper.png?v=4");
+  background-position: 40% 30%;
+  background-size: 130% 140%;
+  background-repeat: no-repeat;
+  color: var(--cream);
   text-align: center;
-  padding: 3.5rem 1rem;
+  padding: 3.6rem 1rem 3.2rem;
 }
-.subscribe h2 { font-size: 2.4rem; margin: 0 0 0.4rem; }
-.fine { font-size: 0.85rem; color: var(--muted); }
+.subscribe::before {
+  content: "";
+  position: absolute;
+  left: -2px;
+  right: -2px;
+  top: 0;
+  height: max(44px, calc(100vw * 80 / 1500));
+  margin-top: calc(0px - max(34px, calc(100vw * 62 / 1500)));
+  background: url("/assets/images/subscribe-tear.png?v=1") 22% top / 158% 100% no-repeat;
+  pointer-events: none;
+}
+.subscribe h2 { font-size: 2.4rem; margin: 0 0 0.4rem; color: var(--cream); }
+.subscribe p { color: var(--cream); }
+.fine { font-size: 0.85rem; color: var(--cream); }
 .site-footer {
+  position: relative;
+  z-index: 3;
+  overflow: visible;
   background: var(--green-dark);
-  color: #fff;
-  padding: 2.5rem 0;
+  color: var(--cream);
+  padding: 3rem 0 2.5rem;
+}
+.site-footer::before {
+  content: "";
+  position: absolute;
+  left: -2px;
+  right: -2px;
+  top: 0;
+  height: max(38px, calc(100vw * 64 / 1500));
+  margin-top: calc(0px - max(28px, calc(100vw * 50 / 1500)));
+  background: url("/assets/images/footer-tear.png?v=2") 72% top / 124% 100% no-repeat;
+  pointer-events: none;
 }
 .footer-grid {
   display: grid;
@@ -210,7 +264,7 @@ section.band { padding: 3.5rem 0; }
 }
 .footer-logo img { height: 70px; width: auto; }
 .footer-nav, .social { display: flex; flex-wrap: wrap; gap: 0.75rem 1.2rem; justify-content: center; }
-.site-footer a { color: #fff; text-decoration: none; font-size: 0.9rem; }
+.site-footer a { color: var(--cream); text-decoration: none; font-size: 0.9rem; }
 .site-footer a:hover { color: var(--gold); }
 .video-wrap { position: relative; padding-top: 56.25%; margin: 1rem 0 1.5rem; }
 .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }

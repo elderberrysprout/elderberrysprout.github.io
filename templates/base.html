@@ -8,8 +8,10 @@
   <link rel="icon" href="{{ site.favicon }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/main.css?v=header4">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="preload" href="/assets/fonts/cardinal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/cardinal-alternate.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/main.css?v=footer2">
   <meta property="og:title" content="{{ title or site.title }}">
   <meta property="og:site_name" content="{{ site.title }}">
   <meta property="og:type" content="{% if og_type %}{{ og_type }}{% else %}website{% endif %}">
@@ -65,6 +67,6 @@
       </div>
     </div>
   </footer>
-  <script src="/assets/js/site.js"></script>
+  <script src="/assets/js/site.js?v=cardinal1"></script>
 </body>
 </html>
