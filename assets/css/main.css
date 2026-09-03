@@ -37,7 +37,11 @@ h1, h2, h3, h4 {
 .skip:focus { left: 0; z-index: 20; }
 .wrap { width: min(1100px, calc(100% - 2rem)); margin-inline: auto; }
 .site-header {
-  background: var(--green);
+  background-color: var(--green);
+  background-image: url("/assets/images/header-paper.png?v=3");
+  background-position: top left;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -46,12 +50,12 @@ h1, h2, h3, h4 {
 .site-header::after {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
+  left: -2px;
+  right: -2px;
   top: 100%;
   height: max(32px, calc(100vw * 55 / 1500));
   margin-top: -8px;
-  background: url("/assets/images/header-tear.png") center top / 100% 100% no-repeat;
+  background: url("/assets/images/header-tear.png?v=3") left top / calc(100% + 4px) 100% no-repeat;
   pointer-events: none;
 }
 .header-inner {
@@ -61,7 +65,9 @@ h1, h2, h3, h4 {
   grid-template-columns: auto 1fr;
   align-items: center;
   gap: 1.25rem;
-  padding: 0.7rem 0;
+  padding: 0.4rem 0;
+  position: relative;
+  z-index: 1;
 }
 .logo img { display: block; height: 64px; width: auto; }
 .site-nav {
