@@ -215,13 +215,13 @@ section.band { padding: 3.5rem 0; }
   z-index: 2;
   overflow: visible;
   background-color: var(--green);
-  background-image: url("/assets/images/header-paper.png?v=4");
-  background-position: 40% 30%;
-  background-size: 130% 140%;
-  background-repeat: no-repeat;
+  background-image: url("/assets/images/header-paper-tile.png?v=1");
+  background-position: center top;
+  background-size: auto 100%;
+  background-repeat: repeat-x;
   color: var(--paper);
   text-align: center;
-  padding: 3.6rem 1rem 3.4rem;
+  padding: 1.15rem 1rem 2.5rem;
 }
 .subscribe::before {
   content: "";
@@ -229,13 +229,13 @@ section.band { padding: 3.5rem 0; }
   left: -2px;
   right: -2px;
   top: 0;
-  height: max(44px, calc(100vw * 80 / 1500));
-  margin-top: calc(0px - max(34px, calc(100vw * 62 / 1500)));
-  background: url("/assets/images/subscribe-tear.png?v=1") 18% top / 175% 100% no-repeat;
+  height: 40px;
+  margin-top: -32px;
+  background: url("/assets/images/subscribe-tear-tile.png?v=1") left top / auto 100% repeat-x;
   pointer-events: none;
 }
-.subscribe h2 { font-size: 2.4rem; margin: 0 0 0.4rem; color: var(--paper); }
-.subscribe p { color: var(--paper); }
+.subscribe h2 { font-size: 1.7rem; margin: 0 0 0.2rem; color: var(--paper); }
+.subscribe p { color: var(--paper); margin: 0 0 0.7rem; font-size: 0.95rem; }
 .fine { font-size: 0.85rem; color: var(--paper); }
 .site-footer {
   position: relative;
