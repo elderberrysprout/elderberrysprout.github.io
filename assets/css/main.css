@@ -219,9 +219,9 @@ section.band { padding: 3.5rem 0; }
   background-position: 40% 30%;
   background-size: 130% 140%;
   background-repeat: no-repeat;
-  color: var(--cream);
+  color: var(--paper);
   text-align: center;
-  padding: 3.6rem 1rem 3.2rem;
+  padding: 3.6rem 1rem 3.4rem;
 }
 .subscribe::before {
   content: "";
@@ -231,19 +231,19 @@ section.band { padding: 3.5rem 0; }
   top: 0;
   height: max(44px, calc(100vw * 80 / 1500));
   margin-top: calc(0px - max(34px, calc(100vw * 62 / 1500)));
-  background: url("/assets/images/subscribe-tear.png?v=1") 22% top / 158% 100% no-repeat;
+  background: url("/assets/images/subscribe-tear.png?v=1") 18% top / 175% 100% no-repeat;
   pointer-events: none;
 }
-.subscribe h2 { font-size: 2.4rem; margin: 0 0 0.4rem; color: var(--cream); }
-.subscribe p { color: var(--cream); }
-.fine { font-size: 0.85rem; color: var(--cream); }
+.subscribe h2 { font-size: 2.4rem; margin: 0 0 0.4rem; color: var(--paper); }
+.subscribe p { color: var(--paper); }
+.fine { font-size: 0.85rem; color: var(--paper); }
 .site-footer {
   position: relative;
   z-index: 3;
   overflow: visible;
   background: var(--green-dark);
-  color: var(--cream);
-  padding: 3rem 0 2.5rem;
+  color: var(--paper);
+  padding: 3.4rem 0 2.5rem;
 }
 .site-footer::before {
   content: "";
@@ -253,7 +253,7 @@ section.band { padding: 3.5rem 0; }
   top: 0;
   height: max(38px, calc(100vw * 64 / 1500));
   margin-top: calc(0px - max(28px, calc(100vw * 50 / 1500)));
-  background: url("/assets/images/footer-tear.png?v=2") 72% top / 124% 100% no-repeat;
+  background: url("/assets/images/footer-tear.png?v=2") 80% top / 118% 100% no-repeat;
   pointer-events: none;
 }
 .footer-grid {
@@ -264,7 +264,7 @@ section.band { padding: 3.5rem 0; }
 }
 .footer-logo img { height: 70px; width: auto; }
 .footer-nav, .social { display: flex; flex-wrap: wrap; gap: 0.75rem 1.2rem; justify-content: center; }
-.site-footer a { color: var(--cream); text-decoration: none; font-size: 0.9rem; }
+.site-footer a { color: var(--paper); text-decoration: none; font-size: 0.9rem; }
 .site-footer a:hover { color: var(--gold); }
 .video-wrap { position: relative; padding-top: 56.25%; margin: 1rem 0 1.5rem; }
 .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
