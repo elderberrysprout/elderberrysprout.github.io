@@ -38,7 +38,7 @@ h1, h2, h3, h4 {
 .wrap { width: min(1100px, calc(100% - 2rem)); margin-inline: auto; }
 .site-header {
   background-color: var(--green);
-  background-image: url("/assets/images/header-paper.png?v=3");
+  background-image: url("/assets/images/header-paper.png?v=4");
   background-position: top left;
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -55,7 +55,7 @@ h1, h2, h3, h4 {
   top: 100%;
   height: max(32px, calc(100vw * 55 / 1500));
   margin-top: -8px;
-  background: url("/assets/images/header-tear.png?v=3") left top / calc(100% + 4px) 100% no-repeat;
+  background: url("/assets/images/header-tear.png?v=4") left top / calc(100% + 4px) 100% no-repeat;
   pointer-events: none;
 }
 .header-inner {
