@@ -1,12 +1,13 @@
 ---
 title: Newsletter Signup
 permalink: /newsletter-signup/
+centered: true
 ---
 
-## Newsletter Signup
+Join our group of magical folks for a monthly letter with new product launches, freebies, and discount codes.
 
-Join our group of magical folks receiving a monthly newsletter, filled with updates about new product launches, freebies and discount codes.
+To be added to the list, send an email to [elderberrysprout@protonmail.com](mailto:elderberrysprout@protonmail.com?subject=Newsletter) with the subject **Newsletter**. I’ll add you from there.
 
-GitHub cannot collect newsletter signups the way Squarespace did. Send a note to [elderberrysprout@protonmail.com](mailto:elderberrysprout@protonmail.com?subject=Newsletter%20signup) with the subject **Newsletter signup** and I’ll add you.
+<a class="btn" href="mailto:elderberrysprout@protonmail.com?subject=Newsletter">Email to sign up</a>
 
 We respect your privacy.

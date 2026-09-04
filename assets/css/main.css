@@ -196,13 +196,34 @@ section.band { padding: 3.5rem 0; }
 .card .meta, .card .price { color: var(--gold); font-size: 0.9rem; }
 .sold { color: var(--gold); font-weight: 700; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.06em; }
 .page-hero {
-  background: var(--green);
-  color: #fff;
-  padding: 3rem 0 2.4rem;
+  position: relative;
+  z-index: 2;
+  overflow: visible;
+  background-color: #d6c49e;
+  background-image: url("/assets/images/kraft-paper-tile.png?v=1");
+  background-position: center top;
+  background-size: auto 100%;
+  background-repeat: repeat-x;
+  color: var(--ink);
+  padding: 2.4rem 0 2.5rem;
   text-align: center;
 }
-.page-hero h1 { margin: 0; font-size: clamp(2rem, 5vw, 3.4rem); color: #fff; padding-block: 0.12em; }
+.page-hero::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  right: -2px;
+  top: 100%;
+  height: 40px;
+  margin-top: -16px;
+  background: url("/assets/images/kraft-tear-tile.png?v=1") left top / auto 100% repeat-x;
+  pointer-events: none;
+}
+.page-hero h1 { margin: 0; font-size: clamp(2rem, 5vw, 3.4rem); color: var(--ink); padding-block: 0.12em; }
 .prose { width: min(760px, calc(100% - 2rem)); margin: 2.5rem auto 3rem; }
+.page-centered { text-align: center; }
+.page-centered h1 { margin-bottom: 0.85rem; }
+.page-centered .btn { margin: 0.5rem 0 1rem; }
 .prose img { display: block; margin: 1.2rem auto; }
 .prose .gallery {
   display: grid;
