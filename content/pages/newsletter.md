@@ -10,4 +10,4 @@ To be added to the list, send an email to [elderberrysprout@protonmail.com](mail
 
 <a class="btn" href="mailto:elderberrysprout@protonmail.com?subject=Newsletter">Email to sign up</a>
 
-We respect your privacy.
+<p class="signup-note">We respect your privacy.</p>
