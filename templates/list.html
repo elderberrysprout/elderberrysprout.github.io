@@ -7,7 +7,7 @@
 </div>
 <div class="wrap band">
   {% if note %}<p class="note">{{ note }}</p>{% endif %}
-  <div class="grid{% if kind == 'post' %} grid-posts{% endif %}">
+  <div class="grid">
     {% for item in items %}
     <article class="card">
       {% if item.image %}<a href="{{ item.permalink }}"><img src="{{ item.image }}" alt="{{ item.title }}"></a>{% endif %}
