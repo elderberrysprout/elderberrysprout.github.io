@@ -199,10 +199,10 @@ section.band { padding: 3.5rem 0; }
   position: relative;
   z-index: 2;
   overflow: visible;
-  background-color: #a48856;
-  background-image: url("/assets/images/kraft-paper.png?v=4");
-  background-position: top left;
-  background-size: 100% 100%;
+  background-color: #c1a479;
+  background-image: url("/assets/images/kraft-paper.png?v=5");
+  background-position: center bottom;
+  background-size: 100% auto;
   background-repeat: no-repeat;
   color: var(--ink);
   padding: calc(max(32px, 100vw * 55 / 1500) + 1.15rem) 0 0.65rem;
@@ -211,12 +211,12 @@ section.band { padding: 3.5rem 0; }
 .page-hero::after {
   content: "";
   position: absolute;
-  left: -2px;
-  right: -2px;
+  left: 0;
+  right: 0;
   top: 100%;
-  height: max(32px, calc(100vw * 55 / 1500));
-  margin-top: -10px;
-  background: url("/assets/images/kraft-tear.png?v=4") left top / calc(100% + 4px) 100% no-repeat;
+  height: calc(100vw * 96 / 2000);
+  margin-top: calc(100vw * -20 / 2000);
+  background: url("/assets/images/kraft-tear.png?v=5") center top / 100% 100% no-repeat;
   pointer-events: none;
 }
 .page-hero h1 { margin: 0; font-size: clamp(2rem, 5vw, 3.4rem); color: var(--ink); }
