@@ -258,7 +258,7 @@ section.band { padding: 3.5rem 0; }
   overflow: visible;
   background: var(--green-dark);
   color: var(--paper);
-  padding: 3.4rem 0 2.5rem;
+  padding: 1.55rem 0 1.1rem;
 }
 .site-footer::before {
   content: "";
@@ -273,14 +273,36 @@ section.band { padding: 3.5rem 0; }
 }
 .footer-grid {
   display: grid;
-  gap: 1.5rem;
-  justify-items: center;
-  text-align: center;
+  grid-template-columns: auto minmax(11rem, 16rem) auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.75rem;
 }
-.footer-logo img { height: 70px; width: auto; }
-.footer-nav, .social { display: flex; flex-wrap: wrap; gap: 0.75rem 1.2rem; justify-content: center; }
-.site-footer a { color: var(--paper); text-decoration: none; font-size: 0.9rem; }
+.footer-logo img { height: 48px; width: auto; }
+.footer-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 2rem;
+}
+.footer-nav, .social {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.16rem;
+}
+.site-footer a {
+  color: var(--paper);
+  text-decoration: none;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  line-height: 1.35;
+}
 .site-footer a:hover { color: var(--gold); }
+.footer-scene {
+  width: 168px;
+  height: auto;
+  display: block;
+}
 .video-wrap { position: relative; padding-top: 56.25%; margin: 1rem 0 1.5rem; }
 .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 .tag { display: inline-block; margin: 0 0.3rem 0.3rem 0; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold); text-decoration: none; }
@@ -300,4 +322,17 @@ section.band { padding: 3.5rem 0; }
   .product { grid-template-columns: 1fr; }
   .hero { justify-content: center; text-align: center; min-height: 58vh; }
   .cream .wrap[style] { grid-template-columns: 1fr !important; }
+  .footer-grid {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "logo scene"
+      "links links";
+    align-items: center;
+    justify-items: stretch;
+    gap: 0.7rem 1rem;
+    width: 100%;
+  }
+  .footer-logo { grid-area: logo; }
+  .footer-columns { grid-area: links; justify-self: start; }
+  .footer-scene { grid-area: scene; width: 132px; }
 }
