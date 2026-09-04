@@ -3,6 +3,7 @@ title: Ten Pack Beeswax Birthday Candles
 price: $8.00
 sold_out: false
 permalink: /shop/p/birthday-candle-bundle/
+etsy_url: https://www.etsy.com/listing/1518640321/10-pack-beeswax-birthday-candles-4-12
 image: /assets/images/1654989158145-51dgv43ijon75be21jws_-img_5783-cake.jpg
 images:
 - /assets/images/1654989158145-51dgv43ijon75be21jws_-img_5783-cake.jpg

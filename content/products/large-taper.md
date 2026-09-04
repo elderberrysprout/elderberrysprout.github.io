@@ -3,6 +3,7 @@ title: 10" Hand Dipped Beeswax Taper Candles
 price: $16.00
 sold_out: false
 permalink: /shop/p/large-taper/
+etsy_url: https://www.etsy.com/listing/1078988869/10-pair-of-hand-dipped-beeswax-taper
 image: /assets/images/1675305634488-597p6jmqne05xg4ceya4_img_3910-edit-800x1200.jpg
 images:
 - /assets/images/1675305634488-597p6jmqne05xg4ceya4_img_3910-edit-800x1200.jpg

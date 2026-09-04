@@ -3,6 +3,7 @@ title: Medieval Cathedral Grimoire Page Pack Printable - Full Sized
 price: 'Sale Price: $9.99 Original Price: $18.88'
 sold_out: false
 permalink: /shop/p/cathedral-grimoire-page-pack-printable/
+etsy_url: https://www.etsy.com/listing/1522380090/medieval-cathedral-grimoire-journalbook
 image: /assets/images/1675205342858-skcqays0nglo9lokjxxz_vertical-1000x1500-full.jpg
 images:
 - /assets/images/1675205342858-skcqays0nglo9lokjxxz_vertical-1000x1500-full.jpg

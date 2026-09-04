@@ -3,6 +3,7 @@ title: 7" Hand Dipped Beeswax Taper Candles
 price: $14.00
 sold_out: false
 permalink: /shop/p/small-taper/
+etsy_url: https://www.etsy.com/listing/1082841765/7-hand-dipped-beeswax-taper-candle-pair
 image: /assets/images/1675305431436-6h2j4uz8pusdsb4tw8ab_img_3914-edit-1200x800.jpg
 images:
 - /assets/images/1675305431436-6h2j4uz8pusdsb4tw8ab_img_3914-edit-1200x800.jpg

@@ -199,11 +199,11 @@ section.band { padding: 3.5rem 0; }
   position: relative;
   z-index: 2;
   overflow: visible;
-  background-color: #937954;
-  background-image: url("/assets/images/kraft-paper-tile.png?v=3");
-  background-position: center top;
-  background-size: auto 100%;
-  background-repeat: repeat-x;
+  background-color: #a48856;
+  background-image: url("/assets/images/kraft-paper.png?v=4");
+  background-position: top left;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   color: var(--ink);
   padding: calc(max(32px, 100vw * 55 / 1500) + 1.15rem) 0 0.65rem;
   text-align: center;
@@ -214,13 +214,13 @@ section.band { padding: 3.5rem 0; }
   left: -2px;
   right: -2px;
   top: 100%;
-  height: 36px;
-  margin-top: -14px;
-  background: url("/assets/images/kraft-tear-tile.png?v=3") left top / auto 100% repeat-x;
+  height: max(32px, calc(100vw * 55 / 1500));
+  margin-top: -10px;
+  background: url("/assets/images/kraft-tear.png?v=4") left top / calc(100% + 4px) 100% no-repeat;
   pointer-events: none;
 }
 .page-hero h1 { margin: 0; font-size: clamp(2rem, 5vw, 3.4rem); color: var(--ink); }
-.page-hero + .wrap { padding-top: 1.6rem; padding-bottom: 3.5rem; }
+.page-hero + .wrap { padding-top: calc(max(32px, 100vw * 55 / 1500) + 2.85rem); padding-bottom: 3.5rem; }
 .prose { width: min(760px, calc(100% - 2rem)); margin: 0 auto 3rem; }
 main > .prose,
 main > .product {
@@ -286,7 +286,11 @@ main > .product {
   position: relative;
   z-index: 3;
   overflow: visible;
-  background: var(--green-dark);
+  background-color: var(--green-dark);
+  background-image: url("/assets/images/footer-paper-tile.png?v=1");
+  background-position: center top;
+  background-size: auto 100%;
+  background-repeat: repeat-x;
   color: var(--paper);
   padding: 1.55rem 0 1.1rem;
 }
@@ -302,17 +306,25 @@ main > .product {
   pointer-events: none;
 }
 .footer-grid {
+  width: min(1400px, calc(100% - 1.5rem));
+  margin-inline: auto;
   display: grid;
-  grid-template-columns: auto minmax(16rem, 24rem) auto;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: "logo links";
   align-items: center;
-  justify-content: space-between;
+  position: relative;
+  min-height: 92px;
   gap: 0.75rem 1.75rem;
 }
+.footer-logo { grid-area: logo; justify-self: start; z-index: 1; }
 .footer-logo img { height: 48px; width: auto; }
 .footer-columns {
+  grid-area: links;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 0.1rem 1.6rem;
+  justify-self: end;
+  z-index: 1;
 }
 .footer-nav, .social {
   display: flex;
@@ -332,6 +344,13 @@ main > .product {
   width: 220px;
   height: auto;
   display: block;
+  grid-area: 1 / 1 / -1 / -1;
+  justify-self: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+  pointer-events: none;
 }
 .video-wrap { position: relative; padding-top: 56.25%; margin: 1rem 0 1.5rem; }
 .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
@@ -353,16 +372,24 @@ main > .product {
   .hero { justify-content: center; text-align: center; min-height: 58vh; }
   .cream .wrap[style] { grid-template-columns: 1fr !important; }
   .footer-grid {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr;
     grid-template-areas:
-      "logo scene"
-      "links links";
-    align-items: center;
-    justify-items: stretch;
-    gap: 0.7rem 1rem;
-    width: 100%;
+      "scene"
+      "logo"
+      "links";
+    justify-items: center;
+    min-height: 0;
+    gap: 0.85rem;
+    width: calc(100% - 1.5rem);
   }
-  .footer-logo { grid-area: logo; }
-  .footer-columns { grid-area: links; justify-self: start; }
-  .footer-scene { grid-area: scene; width: 132px; }
+  .footer-logo { justify-self: center; }
+  .footer-columns { justify-self: center; }
+  .footer-scene {
+    grid-area: scene;
+    position: relative;
+    left: auto;
+    transform: none;
+    width: 160px;
+    pointer-events: none;
+  }
 }

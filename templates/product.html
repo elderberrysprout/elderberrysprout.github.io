@@ -18,9 +18,13 @@
     <p class="note">
       This catalog is from the original Elderberry Sprout shop. There is no cart on GitHub.
       Email <a href="mailto:{{ site.email }}?subject={{ title | urlencode }}">{{ site.email }}</a>
-      to inquire, or see if it is listed on
-      <a href="{{ site.etsy }}">Etsy</a>.
+      to inquire{% if etsy_url %}, or buy this piece on
+      <a href="{{ etsy_url }}">Etsy</a>{% else %}, or see if it is listed on
+      <a href="{{ site.etsy }}">Etsy</a>{% endif %}.
     </p>
+    {% if etsy_url %}
+    <p><a class="btn" href="{{ etsy_url }}">View on Etsy</a></p>
+    {% endif %}
     <div class="prose" style="width:auto;margin:0">{{ content | safe }}</div>
   </div>
 </article>

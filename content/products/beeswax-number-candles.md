@@ -3,6 +3,7 @@ title: Beeswax Number Candles
 price: $5.00
 sold_out: false
 permalink: /shop/p/beeswax-number-candles/
+etsy_url: https://www.etsy.com/listing/1518766341/beeswax-number-candle-birthday-candle
 image: /assets/images/1663728830283-0s5vdvbaiqia3ckz0yvi_img_6340.jpg
 images:
 - /assets/images/1663728830283-0s5vdvbaiqia3ckz0yvi_img_6340.jpg

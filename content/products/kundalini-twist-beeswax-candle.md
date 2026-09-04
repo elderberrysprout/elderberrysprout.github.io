@@ -3,6 +3,7 @@ title: Kundalini Twist Beeswax Candle
 price: $14.00
 sold_out: false
 permalink: /shop/p/kundalini-twist-beeswax-candle/
+etsy_url: https://www.etsy.com/listing/1256136733/kundalini-twist-beeswax-candle
 image: /assets/images/1675306129761-kz076edt1m5c7id367fp_-img_5837---copy-800x1200.jpg
 images:
 - /assets/images/1675306129761-kz076edt1m5c7id367fp_-img_5837---copy-800x1200.jpg
