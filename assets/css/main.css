@@ -22,9 +22,14 @@
   --ink: #2a241c;
   --muted: #5c5348;
   --white: #fff;
+  color-scheme: only light;
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  color-scheme: only light;
+  background: var(--paper);
+}
 body {
   margin: 0;
   font-family: "Libre Franklin", system-ui, sans-serif;
@@ -32,6 +37,7 @@ body {
   color: var(--ink);
   background: var(--paper);
   line-height: 1.65;
+  color-scheme: only light;
 }
 img { max-width: 100%; height: auto; }
 a { color: var(--green); }
@@ -74,7 +80,21 @@ h1, h2, h3, h4 {
   top: 100%;
   height: max(32px, calc(100vw * 55 / 1500));
   margin-top: -8px;
-  background: url("/assets/images/header-tear.png?v=4") left top / calc(100% + 4px) 100% no-repeat;
+  background-color: var(--green);
+  background-image: url("/assets/images/header-tear.png?v=4");
+  background-position: left top;
+  background-size: calc(100% + 4px) 100%;
+  background-repeat: no-repeat;
+  -webkit-mask-image: url("/assets/images/header-tear.png?v=4");
+  mask-image: url("/assets/images/header-tear.png?v=4");
+  -webkit-mask-size: calc(100% + 4px) 100%;
+  mask-size: calc(100% + 4px) 100%;
+  -webkit-mask-position: left top;
+  mask-position: left top;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  mask-mode: alpha;
+  forced-color-adjust: none;
   pointer-events: none;
 }
 .header-inner {
@@ -225,7 +245,19 @@ section.band { padding: 3.5rem 0; }
   top: 100%;
   height: calc(100vw * 96 / 2000);
   margin-top: calc(100vw * -20 / 2000);
-  background: url("/assets/images/kraft-tear.png?v=6") center top / 100% 100% no-repeat;
+  background-color: #c1a479;
+  background-image: url("/assets/images/kraft-tear.png?v=6");
+  background-position: center top;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  -webkit-mask-image: url("/assets/images/kraft-tear.png?v=6");
+  mask-image: url("/assets/images/kraft-tear.png?v=6");
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  mask-mode: alpha;
+  forced-color-adjust: none;
   pointer-events: none;
 }
 .page-hero h1 { margin: 0; font-size: clamp(2rem, 5vw, 3.4rem); color: var(--ink); }
@@ -282,24 +314,37 @@ main > .product {
   position: relative;
   z-index: 2;
   overflow: visible;
-  background-color: var(--green);
-  background-image: url("/assets/images/header-paper-tile.png?v=1");
+  container-type: inline-size;
+  background-color: #3e502c;
+  background-image: url("/assets/images/subscribe-paper.png?v=2");
   background-position: center top;
-  background-size: auto 100%;
-  background-repeat: repeat-x;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
   color: var(--paper);
   text-align: center;
-  padding: 0.7rem 1rem 3rem;
+  padding: calc(100cqw * 20 / 2000 + 0.7rem) 0 3rem;
 }
 .subscribe::before {
   content: "";
   position: absolute;
-  left: -2px;
-  right: -2px;
+  left: 0;
+  right: 0;
   top: 0;
-  height: 40px;
-  margin-top: -32px;
-  background: url("/assets/images/subscribe-tear-tile.png?v=1") left top / auto 100% repeat-x;
+  height: calc(100cqw * 96 / 2000);
+  margin-top: calc(100cqw * -76 / 2000);
+  background-color: #3e502c;
+  background-image: url("/assets/images/subscribe-tear.png?v=2");
+  background-position: center top;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  -webkit-mask-image: url("/assets/images/subscribe-tear.png?v=2");
+  mask-image: url("/assets/images/subscribe-tear.png?v=2");
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  mask-mode: alpha;
+  forced-color-adjust: none;
   pointer-events: none;
 }
 .subscribe h2 { font-size: 1.7rem; margin: 0 0 0.2rem; color: var(--paper); }
@@ -309,23 +354,28 @@ main > .product {
   position: relative;
   z-index: 3;
   overflow: visible;
+  container-type: inline-size;
   background-color: var(--green-dark);
-  background-image: url("/assets/images/footer-paper-tile.png?v=1");
-  background-position: center top;
-  background-size: auto 100%;
-  background-repeat: repeat-x;
   color: var(--paper);
-  padding: 1.55rem 0 1.1rem;
+  padding: calc(100cqw * 20 / 2000 + 1.35rem) 0 1.1rem;
 }
 .site-footer::before {
   content: "";
   position: absolute;
-  left: -2px;
-  right: -2px;
+  left: 0;
+  right: 0;
   top: 0;
-  height: max(38px, calc(100vw * 64 / 1500));
-  margin-top: calc(0px - max(28px, calc(100vw * 50 / 1500)));
-  background: url("/assets/images/footer-tear.png?v=2") 80% top / 118% 100% no-repeat;
+  height: calc(100cqw * 96 / 2000);
+  margin-top: calc(100cqw * -76 / 2000);
+  background-color: var(--green-dark);
+  -webkit-mask-image: url("/assets/images/footer-tear.png?v=3");
+  mask-image: url("/assets/images/footer-tear.png?v=3");
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  mask-mode: alpha;
+  forced-color-adjust: none;
   pointer-events: none;
 }
 .footer-grid {
