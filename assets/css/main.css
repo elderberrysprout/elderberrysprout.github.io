@@ -22,12 +22,13 @@
   --ink: #2a241c;
   --muted: #5c5348;
   --white: #fff;
-  color-scheme: only light;
+  --header-width: min(1200px, calc(100% - 1.5rem));
+  color-scheme: dark;
 }
 * { box-sizing: border-box; }
 html {
   scroll-behavior: smooth;
-  color-scheme: only light;
+  color-scheme: dark;
   background: var(--paper);
 }
 body {
@@ -37,7 +38,8 @@ body {
   color: var(--ink);
   background: var(--paper);
   line-height: 1.65;
-  color-scheme: only light;
+  color-scheme: dark;
+  forced-color-adjust: none;
 }
 img { max-width: 100%; height: auto; }
 a { color: var(--green); }
@@ -80,25 +82,11 @@ h1, h2, h3, h4 {
   top: 100%;
   height: max(32px, calc(100vw * 55 / 1500));
   margin-top: -8px;
-  background-color: var(--green);
-  background-image: url("/assets/images/header-tear.png?v=4");
-  background-position: left top;
-  background-size: calc(100% + 4px) 100%;
-  background-repeat: no-repeat;
-  -webkit-mask-image: url("/assets/images/header-tear.png?v=4");
-  mask-image: url("/assets/images/header-tear.png?v=4");
-  -webkit-mask-size: calc(100% + 4px) 100%;
-  mask-size: calc(100% + 4px) 100%;
-  -webkit-mask-position: left top;
-  mask-position: left top;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  mask-mode: alpha;
-  forced-color-adjust: none;
+  background: url("/assets/images/header-tear.png?v=6") left top / calc(100% + 4px) 100% no-repeat;
   pointer-events: none;
 }
 .header-inner {
-  width: min(1200px, calc(100% - 1.5rem));
+  width: var(--header-width);
   margin: 0 auto;
   display: grid;
   grid-template-columns: auto 1fr;
@@ -245,19 +233,7 @@ section.band { padding: 3.5rem 0; }
   top: 100%;
   height: calc(100vw * 96 / 2000);
   margin-top: calc(100vw * -20 / 2000);
-  background-color: #c1a479;
-  background-image: url("/assets/images/kraft-tear.png?v=6");
-  background-position: center top;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  -webkit-mask-image: url("/assets/images/kraft-tear.png?v=6");
-  mask-image: url("/assets/images/kraft-tear.png?v=6");
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  mask-mode: alpha;
-  forced-color-adjust: none;
+  background: url("/assets/images/kraft-tear.png?v=8") center top / 100% 100% no-repeat;
   pointer-events: none;
 }
 .page-hero h1 { margin: 0; font-size: clamp(2rem, 5vw, 3.4rem); color: var(--ink); }
@@ -314,37 +290,24 @@ main > .product {
   position: relative;
   z-index: 2;
   overflow: visible;
-  container-type: inline-size;
-  background-color: #3e502c;
-  background-image: url("/assets/images/subscribe-paper.png?v=2");
+  background-color: var(--green);
+  background-image: url("/assets/images/header-paper-tile.png?v=1");
   background-position: center top;
-  background-size: 100% auto;
-  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-repeat: repeat-x;
   color: var(--paper);
   text-align: center;
-  padding: calc(100cqw * 20 / 2000 + 0.7rem) 0 3rem;
+  padding: 0.7rem 1rem 3rem;
 }
 .subscribe::before {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
+  left: -2px;
+  right: -2px;
   top: 0;
-  height: calc(100cqw * 96 / 2000);
-  margin-top: calc(100cqw * -76 / 2000);
-  background-color: #3e502c;
-  background-image: url("/assets/images/subscribe-tear.png?v=2");
-  background-position: center top;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  -webkit-mask-image: url("/assets/images/subscribe-tear.png?v=2");
-  mask-image: url("/assets/images/subscribe-tear.png?v=2");
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  mask-mode: alpha;
-  forced-color-adjust: none;
+  height: 40px;
+  margin-top: -32px;
+  background: url("/assets/images/subscribe-tear-tile.png?v=1") left top / auto 100% repeat-x;
   pointer-events: none;
 }
 .subscribe h2 { font-size: 1.7rem; margin: 0 0 0.2rem; color: var(--paper); }
@@ -354,32 +317,23 @@ main > .product {
   position: relative;
   z-index: 3;
   overflow: visible;
-  container-type: inline-size;
   background-color: var(--green-dark);
   color: var(--paper);
-  padding: calc(100cqw * 20 / 2000 + 1.35rem) 0 1.1rem;
+  padding: 1.55rem 0 1.1rem;
 }
 .site-footer::before {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
+  left: -2px;
+  right: -2px;
   top: 0;
-  height: calc(100cqw * 96 / 2000);
-  margin-top: calc(100cqw * -76 / 2000);
-  background-color: var(--green-dark);
-  -webkit-mask-image: url("/assets/images/footer-tear.png?v=3");
-  mask-image: url("/assets/images/footer-tear.png?v=3");
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  mask-mode: alpha;
-  forced-color-adjust: none;
+  height: 48px;
+  margin-top: -32px;
+  background: url("/assets/images/footer-tear.png?v=5") center top / 100% 100% no-repeat;
   pointer-events: none;
 }
 .footer-grid {
-  width: min(1400px, calc(100% - 1.5rem));
+  width: var(--header-width);
   margin-inline: auto;
   display: grid;
   grid-template-columns: 1fr auto;
@@ -389,8 +343,8 @@ main > .product {
   min-height: 92px;
   gap: 0.75rem 1.75rem;
 }
-.footer-logo { grid-area: logo; justify-self: start; margin-left: 1.6rem; z-index: 1; }
-.footer-logo img { height: 48px; width: auto; }
+.footer-logo { grid-area: logo; justify-self: start; z-index: 1; }
+.footer-logo img { height: 64px; width: auto; }
 .footer-columns {
   grid-area: links;
   display: grid;
@@ -461,7 +415,7 @@ main > .product {
     gap: 0.85rem;
     width: calc(100% - 1.5rem);
   }
-  .footer-logo { justify-self: center; margin-left: 0; }
+  .footer-logo { justify-self: center; }
   .footer-columns { justify-self: center; }
   .footer-scene {
     grid-area: scene;

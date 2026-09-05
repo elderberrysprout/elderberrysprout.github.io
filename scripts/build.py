@@ -28,9 +28,8 @@ SITE_INFO = {
     "youtube": "https://www.youtube.com/c/elderberrysprout",
     "instagram": "https://www.instagram.com/elderberrysprout",
     "etsy": "https://www.etsy.com/shop/elderberrysprout",
-    "logo": "/assets/images/logo.png",
+    "logo": "/assets/images/logo_footer.png",
     "logo_long": "/assets/images/logo_long.png",
-    "logo_footer": "/assets/images/logo_footer.png",
     "favicon": "/assets/images/favicon.ico",
     "hero": "/assets/images/hero.jpg",
 }
