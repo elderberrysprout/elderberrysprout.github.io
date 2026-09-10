@@ -1,3 +1,15 @@
+if (document.documentElement.classList.contains("dark-preview")) {
+  document.addEventListener("click", (event) => {
+    const link = event.target.closest("a[href]");
+    if (!link) return;
+    const url = new URL(link.href, location.href);
+    if (url.origin !== location.origin) return;
+    if (url.searchParams.get("dark") === "1") return;
+    url.searchParams.set("dark", "1");
+    link.setAttribute("href", `${url.pathname}${url.search}${url.hash}`);
+  });
+}
+
 document.querySelector(".nav-toggle")?.addEventListener("click", () => {
   const nav = document.querySelector(".site-nav");
   const btn = document.querySelector(".nav-toggle");
@@ -66,3 +78,14 @@ function mixHeading(el) {
 }
 
 document.querySelectorAll("h1, h2, h3, h4").forEach(mixHeading);
+
+document.querySelectorAll("a[href]").forEach((link) => {
+  try {
+    const url = new URL(link.href, window.location.href);
+    if (url.origin === window.location.origin && url.pathname.toLowerCase().endsWith(".pdf")) {
+      link.setAttribute("download", decodeURIComponent(url.pathname.split("/").pop()));
+    }
+  } catch (_) {
+    /* ignore malformed hrefs */
+  }
+});

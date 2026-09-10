@@ -6,7 +6,7 @@
   <h2>Download</h2>
   <ul>
     {% for f in files %}
-    <li><a href="{{ f }}">{{ f.split('/')[-1] }}</a></li>
+    <li><a href="{{ f }}" download="{{ f.split('/')[-1] }}">{{ f.split('/')[-1] }}</a></li>
     {% endfor %}
   </ul>
   {% endif %}

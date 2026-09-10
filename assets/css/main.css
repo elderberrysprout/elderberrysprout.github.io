@@ -23,12 +23,12 @@
   --muted: #5c5348;
   --white: #fff;
   --header-width: min(1200px, calc(100% - 1.5rem));
-  color-scheme: dark;
+  color-scheme: only light;
 }
 * { box-sizing: border-box; }
 html {
   scroll-behavior: smooth;
-  color-scheme: dark;
+  color-scheme: only light;
   background: var(--paper);
 }
 body {
@@ -38,7 +38,7 @@ body {
   color: var(--ink);
   background: var(--paper);
   line-height: 1.65;
-  color-scheme: dark;
+  color-scheme: only light;
   forced-color-adjust: none;
 }
 img { max-width: 100%; height: auto; }
@@ -64,8 +64,8 @@ h1, h2, h3, h4 {
 .skip:focus { left: 0; z-index: 20; }
 .wrap { width: min(1100px, calc(100% - 2rem)); margin-inline: auto; }
 .site-header {
-  background-color: var(--green);
-  background-image: url("/assets/images/header-paper.png?v=4");
+  background-color: transparent;
+  background-image: url("/assets/images/header-band.png?v=2");
   background-position: top left;
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -73,17 +73,10 @@ h1, h2, h3, h4 {
   top: 0;
   z-index: 10;
   overflow: visible;
-}
-.site-header::after {
-  content: "";
-  position: absolute;
-  left: -2px;
-  right: -2px;
-  top: 100%;
-  height: max(32px, calc(100vw * 55 / 1500));
-  margin-top: -8px;
-  background: url("/assets/images/header-tear.png?v=6") left top / calc(100% + 4px) 100% no-repeat;
-  pointer-events: none;
+  padding-bottom: max(32px, calc(100vw * 52 / 1500));
+  margin-bottom: calc(8px - max(32px, calc(100vw * 52 / 1500)));
+  color-scheme: only light;
+  forced-color-adjust: none;
 }
 .header-inner {
   width: var(--header-width);
@@ -290,25 +283,17 @@ main > .product {
   position: relative;
   z-index: 2;
   overflow: visible;
-  background-color: var(--green);
-  background-image: url("/assets/images/header-paper-tile.png?v=1");
+  background-color: transparent;
+  background-image: url("/assets/images/subscribe-band.png?v=2");
   background-position: center top;
-  background-size: auto 100%;
+  background-size: 200% 100%;
   background-repeat: repeat-x;
   color: var(--paper);
   text-align: center;
-  padding: 0.7rem 1rem 3rem;
-}
-.subscribe::before {
-  content: "";
-  position: absolute;
-  left: -2px;
-  right: -2px;
-  top: 0;
-  height: 40px;
+  padding: calc(0.7rem + 40px) 1rem 3rem;
   margin-top: -32px;
-  background: url("/assets/images/subscribe-tear-tile.png?v=1") left top / auto 100% repeat-x;
-  pointer-events: none;
+  color-scheme: only light;
+  forced-color-adjust: none;
 }
 .subscribe h2 { font-size: 1.7rem; margin: 0 0 0.2rem; color: var(--paper); }
 .subscribe p { color: var(--paper); margin: 0 0 0.7rem; font-size: 0.95rem; }
@@ -320,6 +305,8 @@ main > .product {
   background-color: var(--green-dark);
   color: var(--paper);
   padding: 1.55rem 0 1.1rem;
+  color-scheme: only light;
+  forced-color-adjust: none;
 }
 .site-footer::before {
   content: "";
@@ -331,6 +318,8 @@ main > .product {
   margin-top: -32px;
   background: url("/assets/images/footer-tear.png?v=5") center top / 100% 100% no-repeat;
   pointer-events: none;
+  color-scheme: only light;
+  forced-color-adjust: none;
 }
 .footer-grid {
   width: var(--header-width);
@@ -425,4 +414,49 @@ main > .product {
     width: 160px;
     pointer-events: none;
   }
+}
+@media print {
+  :root, html, body {
+    color-scheme: light !important;
+    background: #fff !important;
+    color: #2a241c !important;
+  }
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    filter: none !important;
+  }
+  .skip, .site-header, .subscribe, .site-footer, .nav-toggle, .footer-scene {
+    display: none !important;
+  }
+  .hero, .page-hero {
+    background-image: none !important;
+    min-height: 0;
+    padding: 0.5rem 0;
+    color: #2a241c;
+  }
+  .hero::after, .page-hero::after { display: none !important; }
+  .btn, a.btn {
+    clip-path: none;
+    background: transparent;
+    color: inherit;
+    padding: 0;
+  }
+  img[src$=".gif"] { display: none !important; }
+}
+html.dark-preview {
+  background: #1c1914;
+  color-scheme: dark;
+}
+html.dark-preview body {
+  background: #1c1914;
+}
+html.dark-preview main {
+  background: var(--paper);
+  filter: invert(1) hue-rotate(180deg);
+}
+html.dark-preview main img,
+html.dark-preview .hero {
+  filter: invert(1) hue-rotate(180deg);
 }
