@@ -7,7 +7,7 @@ tags:
 - thrift haul
 - thrift
 author: Marina Smouse
-image: /assets/images/1639180046015-3zmla5xsz31tol48apgz_eye-mask.jpg
+image: /assets/images/1639180590832-ps9ae8p2pddpp1ey36n9_blog-thumbnail.jpg
 excerpt: In my years of witchy thrifting I have found a lot of treasures. I know I
   love watching these videos so I thought I would make on of my own to share with
   you magical folks! Maybe you can even get some witchy thrifted…

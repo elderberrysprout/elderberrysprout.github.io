@@ -6,7 +6,7 @@ tags:
 - travelers notebook
 - magic
 author: Marina Smouse
-image: /assets/images/1634226838542-h37y1rgpmvx4v9ywqwnv_magic-tag.png
+image: /assets/images/1644180602956-3x4ovsw1k6sa8mprzbn3_img_4060-edit-thumb-blog.jpg
 excerpt: Journaling is a great way to bring conscious intention to your day. I have
   been doing this for years using the Bullet Journal system! It is so great, but I
   have learned that travelers notebooks may be even better! They…

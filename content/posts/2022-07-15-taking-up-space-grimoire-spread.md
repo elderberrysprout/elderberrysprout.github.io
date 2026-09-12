@@ -6,7 +6,7 @@ tags:
 - grimoire
 - magic
 author: Marina Smouse
-image: /assets/images/1645816275448-2cltxtxp4he8o6wjy7m7_screengrabs2.png
+image: /assets/images/1645817140929-qlgdu5cxgr46yh3u9sp1_blog-thumbnail4.png
 excerpt: Today I have a grimoire with me video for you! Shadow work has helped me
   to learn a new lesson and I would like to share that with all you magical folks!
   Thew complete Grimoire spread! “I can now take up space” This…

@@ -7,7 +7,7 @@ tags:
 - sewing
 - grimoire
 author: Marina Smouse
-image: /assets/images/1637368272962-m7ar1ol3drejpnt8fy5k_the-spread-2.jpg
+image: /assets/images/1637111328878-8doeujk2u8cp2w4q3kmy_blog-thumbnail.png
 excerpt: I love to mend things. I would say it is one of my favorite things to do!
   Truly caring for the things I have and making sure they are functioning well and
   serving my expansion as I go through this life with them. I did…

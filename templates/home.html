@@ -6,10 +6,10 @@
   </div>
 </section>
 
-<section class="band">
+<section class="band favorites-band">
   <div class="wrap">
     <h2>Shop our favorites</h2>
-    <div class="grid">
+    <div class="grid favorites">
       {% for p in products %}
       <article class="card">
         {% if p.image %}<a href="{{ p.permalink }}"><img src="{{ p.image }}" alt="{{ p.title }}"></a>{% endif %}
@@ -25,18 +25,19 @@
   </div>
 </section>
 
-<section class="band cream">
-  <div class="wrap" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2rem;align-items:center">
-    <div>
+<section class="band cream ideas" data-reveal>
+  <div class="wrap">
+    <div class="ideas-intro">
       <h2>Need Magical Ideas?</h2>
       <p>Don’t know what to do with your new candles? Need magical workings or Grimoire spread ideas? We’ve got you covered. Check out the Magic Blog for inspiration.</p>
       <a class="btn" href="/magic-blog/">Learn More</a>
     </div>
-    <div class="grid">
+    <div class="grid post-grid ideas-posts">
       {% for post in posts %}
       <article class="card">
+        {% if post.image %}<a href="{{ post.permalink }}"><img src="{{ post.image }}" alt="{{ post.title }}"></a>{% endif %}
         <div class="card-body">
-          <div class="meta">{{ post.date }}</div>
+          <div class="meta">{{ post.date_label or post.date }}</div>
           <h3><a href="{{ post.permalink }}">{{ post.title }}</a></h3>
         </div>
       </article>

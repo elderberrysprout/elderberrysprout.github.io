@@ -7,7 +7,7 @@ tags:
 - grimoire
 - travelers notebook
 author: Marina Smouse
-image: /assets/images/1634780830918-bm9svh3y3q8yege139mr_giphy.gif
+image: /assets/images/1634780632028-c656ad9eby0hdx8gb913_thumbnail---tn-youtube-1280x720-v2.png
 excerpt: Hi everybody, I have recently filled up the magic signature in my travelers
   notebook and I now need to make another one. This one I made from an assortment
   of meaningful papers and you can see the process in the video…

@@ -11,7 +11,7 @@ tags:
 - diy
 - shadow work
 author: Marina Smouse
-image: /assets/images/1638119215079-khz7fazceqlmq2ofix8g_pin-single---book-front.png
+image: /assets/images/1638121271772-afhdg6jmwiwqipyjrg37_blog-thumbnail.png
 excerpt: I have filled up a book of shadows signature in my Travelers Notebook and
   now it is time to make a binder to store it in! This will be my Book of Shadows
   Binder! Made from a vintage photo album with glue and elastic,…

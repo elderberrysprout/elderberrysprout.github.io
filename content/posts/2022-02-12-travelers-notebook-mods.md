@@ -6,7 +6,7 @@ tags:
 - travelers notebook
 - diy
 author: Marina Smouse
-image: /assets/images/1644618582185-mnhcpdx4tju7ybdhow3a_charm-travelers-notebook-modifications.png
+image: /assets/images/1644628305640-8yrk1ce2x1mcsc1lo5g4_blog-thumbnail2.png
 excerpt: I have been really focused on increasing the functionality of my travelers
   notebook in the beginning of this year. With that I have seen a couple of holes
   in functionality that I wanted to remedy in my Travelers…

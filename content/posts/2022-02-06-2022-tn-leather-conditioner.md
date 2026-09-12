@@ -7,7 +7,7 @@ tags:
 - beeswax
 - diy
 author: Marina Smouse
-image: /assets/images/1642272678032-j3kplta6ykdufgt74st3_leather-conditioner.png
+image: /assets/images/1644117033307-34h5ezzv18f7i9dtjxoo_blog-thumbnail.png
 excerpt: Happy 2022 everybody! I hope this Gregorian new year has been treating you
   well thus far! I have been planning up a storm! so much so that I gave my Travelers
   Notebook a full 2022 makeover. You can see the process of…

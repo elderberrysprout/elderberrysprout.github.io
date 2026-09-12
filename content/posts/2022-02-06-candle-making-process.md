@@ -6,7 +6,7 @@ tags:
 - candles
 - homesteading
 author: Marina Smouse
-image: /assets/images/1631368961140-huf7lbsoriwvm042fo8x_img_3518-1920.jpg
+image: /assets/images/1637109659004-mgwwd5ofqeybpt6l6mxm_img_4107-square.jpg
 excerpt: I started making beeswax candles for my personal mindfulness magic practice.
   I had been buying candles from thrift stores for years but I didn’t like the smoke
   that came off of them, plus they were petroleum byproducts.…

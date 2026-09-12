@@ -7,7 +7,33 @@
 </div>
 <div class="wrap band">
   {% if note %}<p class="note">{{ note }}</p>{% endif %}
-  <div class="grid">
+  {% if kind == "post" and browse_tags %}
+  <nav class="blog-browse" aria-label="Browse the Magic Blog">
+    <div class="browse-row">
+      <span class="browse-label">Topics</span>
+      <div class="browse-chips">
+        <a class="chip{% if not active_tag and not active_year %} is-active{% endif %}" href="/magic-blog/"{% if not active_tag and not active_year %} aria-current="page"{% endif %}>All</a>
+        {% for t in browse_tags %}
+        <a class="chip{% if active_tag == t.name %} is-active{% endif %}" href="/magic-blog/tag/{{ t.slug }}/"{% if active_tag == t.name %} aria-current="page"{% endif %}>{{ t.name }}</a>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="browse-row">
+      <span class="browse-label">Years</span>
+      <div class="browse-chips">
+        {% for y in browse_years %}
+        <a class="chip{% if active_year == y.year %} is-active{% endif %}" href="/magic-blog/{{ y.year }}/"{% if active_year == y.year %} aria-current="page"{% endif %}>{{ y.year }}</a>
+        {% endfor %}
+      </div>
+    </div>
+    {% if active_tag or active_year %}
+    <p class="browse-status">
+      {{ items | length }} {% if items | length == 1 %}post{% else %}posts{% endif %}{% if active_tag %} in {{ active_tag }}{% endif %}{% if active_year %} from {{ active_year }}{% endif %}
+    </p>
+    {% endif %}
+  </nav>
+  {% endif %}
+  <div class="grid{% if kind == 'product' %} product-grid{% elif kind == 'post' %} post-grid{% endif %}">
     {% for item in items %}
     <article class="card">
       {% if item.image %}<a href="{{ item.permalink }}"><img src="{{ item.image }}" alt="{{ item.title }}"></a>{% endif %}
@@ -15,7 +41,7 @@
         {% if item.sold_out %}<div class="sold">Sold Out</div>{% endif %}
         <h3><a href="{{ item.permalink }}">{{ item.title }}</a></h3>
         {% if kind == 'product' and item.price %}<div class="price">{{ item.price }}</div>{% endif %}
-        {% if item.date %}<div class="meta">{{ item.date }}</div>{% endif %}
+        {% if item.date %}<div class="meta">{{ item.date_label or item.date }}</div>{% endif %}
         {% if item.excerpt %}<p>{{ item.excerpt }}</p>{% endif %}
       </div>
     </article>

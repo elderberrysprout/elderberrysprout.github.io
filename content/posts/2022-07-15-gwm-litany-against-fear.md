@@ -5,7 +5,7 @@ permalink: /magic-blog/gwm-litany-against-fear/
 tags:
 - grimoire
 author: Marina Smouse
-image: /assets/images/1654809275859-qivh6xx60k99ybw82fwp_tumblr_pj4yy5spq21sqf5tdo1_400-156299524.gif
+image: /assets/images/1654809081799-0akrov8xkvw7pnjuplmm_blog-thumbnail.png
 excerpt: In my spiritual practice I love to integrate truths that I observe in media.
   This practice helps me to seek truth everywhere! And it can and it help me not take
   life too seriously! One way I do this is by meditating on…

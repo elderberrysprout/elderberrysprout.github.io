@@ -6,7 +6,7 @@ tags:
 - candles
 - magic
 author: Marina Smouse
-image: /assets/images/1695433812763-29lbaqom7zw5e6ayyt2c_self-love-square.jpg
+image: /assets/images/1644180547493-r25ykgbyh4bk347cj3od_spell-candle-thumb.jpg
 excerpt: What Is Candle Dressing? Candle dressing is a process in which you adhere
   oils and herbs to a candle to add more intention, love and magic to the burning
   of the candle. This is often done with a spell/chime candle, for…

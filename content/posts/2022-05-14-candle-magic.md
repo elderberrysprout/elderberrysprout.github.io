@@ -6,7 +6,7 @@ tags:
 - magic
 - candles
 author: Marina Smouse
-image: /assets/images/1630808624524-kim6dyqe36fmcrkrktsh_img_3404-candle-1920x1080.jpg
+image: /assets/images/1631836504776-bz4cvp2sod5b8f0bvu9p_img_3404-candle-1920x1080.jpg
 excerpt: Air, Earth, Fire, Water. These elemental energies effect us so deeply whether
   we know it or not. Fire is one of the most powerful, driven and destructive energies.
   And as you can imagine, in candle magic using a flame…

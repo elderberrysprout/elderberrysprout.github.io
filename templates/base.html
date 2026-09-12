@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="reveal-ready">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,6 +15,16 @@
       if (scheme) scheme.setAttribute("content", "dark");
     })();
   </script>
+  <noscript>
+    <style>
+      html.reveal-ready [data-reveal],
+      html.reveal-ready [data-reveal] .card {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+      }
+    </style>
+  </noscript>
   <title>{% if title and title != site.title %}{{ title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{{ description or site.description }}">
   <link rel="icon" href="{{ site.favicon }}">
@@ -23,7 +33,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="preload" href="/assets/fonts/cardinal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/cardinal-alternate.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/css/main.css?v=kraft24">
+  <link rel="stylesheet" href="/assets/css/main.css?v=kraft31">
   <meta property="og:title" content="{{ title or site.title }}">
   <meta property="og:site_name" content="{{ site.title }}">
   <meta property="og:type" content="{% if og_type %}{{ og_type }}{% else %}website{% endif %}">
@@ -83,6 +93,6 @@
       </div>
     </div>
   </footer>
-  <script src="/assets/js/site.js?v=cardinal3"></script>
+  <script src="/assets/js/site.js?v=cardinal4"></script>
 </body>
 </html>

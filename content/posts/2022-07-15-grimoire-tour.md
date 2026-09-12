@@ -5,9 +5,9 @@ permalink: /magic-blog/grimoire-tour/
 tags:
 - magic
 - grimoire
-- flip-through]
+- flip-through
 author: Marina Smouse
-image: /assets/images/1636038238243-wy6bpkloq8tiyfqhm7sc_cover.png
+image: /assets/images/1636037906797-l6vlzb3nvk6amdvvsjik_blog-thumbnail-2.png
 excerpt: Now that it is fall, it is time for me to reflect on what I have learned
   this year! Welcome to my Grimoire in all its glory. This is the junk journal style
   grimoire I have been using for the last 2 years. In the video…

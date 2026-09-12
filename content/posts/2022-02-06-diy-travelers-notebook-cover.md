@@ -8,7 +8,7 @@ tags:
 - travelers notebook
 - craft
 author: Marina Smouse
-image: /assets/images/1644118300619-fnjr6oforja546nmnnd7_dimensions-of-leather-travelers-notebook.png
+image: /assets/images/1644119134444-q5rzni2obglefjvo01xb_blog-thumbnail.jpg
 excerpt: Hey everybody! Today I have a DIY Travelers Notebook cover for you! I have
   made a couple of these now and I absolutely love them. my Travelers notebook is
   a place for me to plan, make lists, and process my emotions, as…

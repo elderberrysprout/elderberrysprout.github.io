@@ -6,7 +6,7 @@ tags:
 - magic
 - grimoire
 author: Marina Smouse
-image: /assets/images/1631241121333-fd5in3vbxhesj4y62dw0_moon-phase-spread.jpg
+image: /assets/images/1631241121333-fd5in3vbxhesj4y62dw0_img_3468-1920x1280.jpg
 excerpt: Journaling has been one of the most consistent magical practices I have ever
   had. It has given me so many things; organization, a creative outlet, a way to clear
   my mind, a to do list, and even just a place to doodle!…

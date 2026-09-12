@@ -5,7 +5,7 @@ permalink: /magic-blog/upgrading-grimoire-spreads/
 tags:
 - grimoire
 author: Marina Smouse
-image: /assets/images/1660351531254-sijb7az5eazl5j394bd5_img_6119.jpg
+image: /assets/images/1660351880385-a2nvq25garmtnnevipky_blog-thumbnail.png
 excerpt: I have been wanting to put some finishing touches on some of the pages in
   my grimoire for a while… Now I have the chance to do that! And i can share the process
   with all of you too! You can see the whole process in the…

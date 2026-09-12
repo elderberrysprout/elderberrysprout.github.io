@@ -6,7 +6,7 @@ tags:
 - magic
 - grimoire
 author: Marina Smouse
-image: /assets/images/1632504430274-pnkf1ghswyurduutdkoc_astral-projection-page.png
+image: /assets/images/1632529118609-astral-projection-grimoire-pages-tall.png
 excerpt: Journaling and creating art are amazing meditation tools to help you focus
   on manifesting what you want. I have created a couple of grimoire spreads that have
   helped me in my interplanetary travels. Those spreads are my…

@@ -6,7 +6,7 @@ tags:
 - candles
 - magic
 author: Marina Smouse
-image: /assets/images/463912fc-3e91-4d26-bdae-947a52d094d3_mullien-torch-collection.jpg
+image: /assets/images/1694195689163-63dll50povcrshhxbc8z_blog-thumbnail.jpg
 excerpt: Hag Torches are amazing candles. Their distinct materials and style of burn
   are so unique and powerful! Since the flame of these candles are so large it is
   important to know how to burn them safely! What is a Mullein…

@@ -7,7 +7,7 @@ tags:
 - homestead
 - magic
 author: Marina Smouse
-image: /assets/images/1630951021602-4x2m2o8ixxud06m4zcs1_img_3426.jpg
+image: /assets/images/1632515139516-szce8mk4c6fesgr7uo9c_img_3879edit.jpg
 excerpt: My tent blanket with a couple of patches and a couple of holes Mending is
   magical. It is the act of truly taking CARE of something that will take care of
   you. Now if that is not a relationship, I don’t know what is!…

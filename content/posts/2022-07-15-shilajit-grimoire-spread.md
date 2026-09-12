@@ -6,7 +6,7 @@ tags:
 - magic
 - grimoire
 author: Marina Smouse
-image: /assets/images/1633455081022-jq4rnofjz1649wb3nc3p_shilajit-grimire-page-stamped.png
+image: /assets/images/1633457078561-4p8kh8h0sht9na80q6c7_shilajit-and-activated-charcoal-grimire-pages-1920.png
 excerpt: Today I have a Grimoire with me to share with you! I have created a spread
   to record what I have learned about Shilajit and Activated charcoal, two black substances
   I have been using in my spiritual practice more…

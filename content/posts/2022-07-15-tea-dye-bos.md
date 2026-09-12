@@ -6,9 +6,10 @@ tags:
 - magic
 - travelers notebook
 - book of shadows
+- shadow work
 - freebie
 author: Marina Smouse
-image: /assets/images/1646870361038-cqsrkw68pmquthel73hr_screenshot-from-2022-03-09-15-52-16.jpg
+image: /assets/images/1646877253977-nf6i60wcs3399bt1v4tj_blog-thumbnail.png
 excerpt: I have been journaling a whole lot this winter (here’s to the season of inward
   reflection)! With that I now require another book of shadows signature for my travelers
   notebook ! Thankfully am able to print beautiful…

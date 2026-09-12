@@ -34,12 +34,63 @@ SITE_INFO = {
     "hero": "/assets/images/hero.jpg",
 }
 
+HOME_FAVORITES = [
+    "kundalini-twist-beeswax-candle",
+    "small-taper",
+    "large-taper",
+    "birthday-candle-bundle",
+    "beeswax-number-candles",
+    "chime-candle",
+]
+
+
+def tag_slug(tag: str) -> str:
+    return str(tag).strip().rstrip("]").strip().lower().replace(" ", "-")
+
+
+def pretty_date(value) -> str:
+    if isinstance(value, datetime):
+        value = value.date()
+    if isinstance(value, date):
+        return value.strftime("%b %d, %Y").replace(" 0", " ")
+    return str(value) if value else ""
+
+
+def collect_blog_nav(posts: list[dict]) -> tuple[list[dict], list[dict]]:
+    tag_counts: dict[str, int] = {}
+    year_counts: dict[int, int] = {}
+    for post in posts:
+        for tag in post.get("tags") or []:
+            name = str(tag).strip().rstrip("]").strip()
+            if name:
+                tag_counts[name] = tag_counts.get(name, 0) + 1
+        d = post.get("date")
+        if isinstance(d, datetime):
+            d = d.date()
+        if isinstance(d, date):
+            year_counts[d.year] = year_counts.get(d.year, 0) + 1
+    # Keep the browse bar to recurring topics. One-off tags still appear on posts.
+    min_count = 2
+    generic = {"magic"}
+    browse_tags = [
+        {"name": name, "slug": tag_slug(name), "count": count}
+        for name, count in sorted(tag_counts.items(), key=lambda kv: (-kv[1], kv[0].lower()))
+        if count >= min_count and name.lower() not in generic
+    ]
+    browse_years = [
+        {"year": year, "count": count}
+        for year, count in sorted(year_counts.items(), reverse=True)
+    ]
+    return browse_tags, browse_years
+
 
 def env() -> Environment:
-    return Environment(
+    jinja = Environment(
         loader=FileSystemLoader(str(TEMPLATES)),
         autoescape=select_autoescape(["html"]),
     )
+    jinja.filters["tag_slug"] = tag_slug
+    return jinja
 
 
 def parse_item(path: Path) -> dict:
@@ -62,6 +113,9 @@ def parse_item(path: Path) -> dict:
     meta.setdefault("slug", path.stem)
     if isinstance(meta.get("date"), datetime):
         meta["date"] = meta["date"].date()
+    if isinstance(meta.get("tags"), list):
+        meta["tags"] = [str(t).strip().rstrip("]").strip() for t in meta["tags"] if str(t).strip()]
+    meta["date_label"] = pretty_date(meta.get("date"))
     return meta
 
 
@@ -71,6 +125,11 @@ def load_dir(folder: Path) -> list[dict]:
     items = [parse_item(p) for p in sorted(folder.glob("*.md"))]
     items.sort(key=lambda i: str(i.get("date") or ""), reverse=True)
     return items
+
+
+def pick_by_slug(items: list[dict], slugs: list[str]) -> list[dict]:
+    by_slug = {item.get("slug"): item for item in items}
+    return [by_slug[slug] for slug in slugs if slug in by_slug]
 
 
 def heading_rng(text: str) -> random.Random:
@@ -195,16 +254,35 @@ def main() -> None:
             title=SITE_INFO["title"],
             description=SITE_INFO["description"],
             posts=posts[:4],
-            products=products[:6],
+            products=pick_by_slug(products, HOME_FAVORITES),
             image=SITE_INFO["hero"],
         ),
     )
 
+    browse_tags, browse_years = collect_blog_nav(posts)
+    blog_nav = {"browse_tags": browse_tags, "browse_years": browse_years, "kind": "post"}
     write(
         out_path("/magic-blog/"),
-        render_page(jinja, "list.html", title="Magic Blog", heading="Magic Blog", items=posts, kind="post"),
+        render_page(
+            jinja,
+            "list.html",
+            title="Magic Blog",
+            heading="Magic Blog",
+            items=posts,
+            **blog_nav,
+        ),
     )
-    write(out_path("/magic/"), render_page(jinja, "list.html", title="Blog", heading="Magic Blog", items=posts, kind="post"))
+    write(
+        out_path("/magic/"),
+        render_page(
+            jinja,
+            "list.html",
+            title="Blog",
+            heading="Magic Blog",
+            items=posts,
+            **blog_nav,
+        ),
+    )
     write(out_path("/shop/"), render_page(jinja, "list.html", title="Shop", heading="Shop", items=products, kind="product", note="Checkout is not available on this site. Email to inquire about a piece, or visit the Etsy shop if it is still listed."))
     write(out_path("/discontinued/"), render_page(jinja, "list.html", title="Previous Collections", heading="Previous Collections", items=discontinued, kind="product"))
     write(out_path("/videos/"), render_page(jinja, "list.html", title="Videos", heading="Videos", items=videos, kind="video"))
@@ -222,14 +300,41 @@ def main() -> None:
         write(out_path(page["permalink"]), render_page(jinja, "page.html", **page))
 
     tags: dict[str, list] = {}
+    years: dict[int, list] = {}
     for post in posts:
         for tag in post.get("tags") or []:
             tags.setdefault(tag, []).append(post)
+        d = post.get("date")
+        if isinstance(d, datetime):
+            d = d.date()
+        if isinstance(d, date):
+            years.setdefault(d.year, []).append(post)
     for tag, items in tags.items():
-        slug = tag.lower().replace(" ", "-")
+        slug = tag_slug(tag)
         write(
             out_path(f"/magic-blog/tag/{slug}/"),
-            render_page(jinja, "list.html", title=tag, heading=tag, items=items, kind="post"),
+            render_page(
+                jinja,
+                "list.html",
+                title=f"{tag} — Magic Blog",
+                heading="Magic Blog",
+                items=items,
+                active_tag=tag,
+                **blog_nav,
+            ),
+        )
+    for year, items in years.items():
+        write(
+            out_path(f"/magic-blog/{year}/"),
+            render_page(
+                jinja,
+                "list.html",
+                title=f"{year} — Magic Blog",
+                heading="Magic Blog",
+                items=items,
+                active_year=year,
+                **blog_nav,
+            ),
         )
 
     write(

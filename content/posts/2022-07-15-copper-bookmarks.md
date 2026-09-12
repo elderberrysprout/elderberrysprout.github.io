@@ -8,7 +8,7 @@ tags:
 - travelers notebook
 - shadow work
 author: Marina Smouse
-image: /assets/images/1636661188957-ebmgsr98ciiudekwidjn_pliers.png
+image: /assets/images/1636591510947-uqf5vsrs24l0xwwkydz9_blog-thumbnail.png
 excerpt: Is it just me or does everyone just use crappy scraps of paper as bookmarks…
   Just me? Well NOT ANYMORE! Now I can make as many bookmarks as I like with a basic
   craft supply, copper wire. You can see the process of…

@@ -7,7 +7,7 @@ tags:
 - grimoire
 - shadow work
 author: Marina Smouse
-image: /assets/images/1635432991275-rwiurex2ebnku3vj793d_pin-single-1.png
+image: /assets/images/1635433897912-u5iygqtmzp96nlfgw7zs_blog-thumbnail.png
 excerpt: When I found this vintage little red riding hood book at the thrift store
   I knew it would end up in my Grimoire. Now the time for that has come! And I have
   a video of the creative process for you as well. This Grimoire…
