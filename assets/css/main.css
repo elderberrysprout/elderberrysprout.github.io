@@ -212,7 +212,7 @@ section.band { padding: 3.5rem 0; }
   margin: 0 auto 1.15rem;
   color: var(--muted);
 }
-.ideas-posts {
+.grid.ideas-posts {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   width: min(calc(var(--home-tile-row) * 4 / 3 + var(--home-tile-gap) / 3), 100%);
   margin-inline: auto;
@@ -525,9 +525,9 @@ main > .product {
   .favorites {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-  .ideas-posts {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    width: min(calc(var(--home-tile-row) * 2 / 3 - var(--home-tile-gap) / 3), 100%);
+  .grid.ideas-posts {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: 100%;
   }
   .card h3 { font-size: 1.02rem; }
   .card p { -webkit-line-clamp: 2; font-size: 0.8rem; }
