@@ -23,7 +23,7 @@
   --muted: #5c5348;
   --white: #fff;
   --header-width: min(1200px, calc(100% - 1.5rem));
-  --home-tile-row: 31.2rem;
+  --home-tile-row: 54.4rem;
   --home-tile-gap: 0.7rem;
   color-scheme: only light;
 }
@@ -186,8 +186,9 @@ section.band { padding: 3.5rem 0; }
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   gap: 1.1rem;
 }
-.favorites {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.grid.favorites,
+.grid.ideas-posts {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   width: min(var(--home-tile-row), 100%);
   margin-inline: auto;
   gap: var(--home-tile-gap);
@@ -211,12 +212,6 @@ section.band { padding: 3.5rem 0; }
 .ideas-intro p {
   margin: 0 auto 1.15rem;
   color: var(--muted);
-}
-.grid.ideas-posts {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  width: min(calc(var(--home-tile-row) * 4 / 3 + var(--home-tile-gap) / 3), 100%);
-  margin-inline: auto;
-  gap: var(--home-tile-gap);
 }
 html.reveal-ready [data-reveal] {
   opacity: 0;
@@ -522,9 +517,7 @@ main > .product {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.75rem;
   }
-  .favorites {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
+  .grid.favorites,
   .grid.ideas-posts {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     width: 100%;

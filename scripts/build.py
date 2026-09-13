@@ -41,6 +41,8 @@ HOME_FAVORITES = [
     "birthday-candle-bundle",
     "beeswax-number-candles",
     "chime-candle",
+    "mullein-torch",
+    "magick-spell-candles",
 ]
 
 
