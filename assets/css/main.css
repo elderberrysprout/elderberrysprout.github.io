@@ -302,6 +302,13 @@ html.reveal-ready [data-reveal].is-visible .ideas-intro h2 {
   font-size: 0.82rem;
   color: var(--muted);
 }
+.shop-group { margin-top: 2.6rem; }
+.shop-group:first-of-type { margin-top: 0.2rem; }
+.shop-group-title {
+  text-align: center;
+  margin: 0 0 1.15rem;
+  font-size: clamp(1.55rem, 3vw, 2.15rem);
+}
 .post-tags { margin: 0.15rem 0 1.1rem; }
 .card {
   background: #fff;

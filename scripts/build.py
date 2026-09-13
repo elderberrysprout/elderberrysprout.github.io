@@ -45,6 +45,57 @@ HOME_FAVORITES = [
     "magick-spell-candles",
 ]
 
+SHOP_ORDER = [
+    "kundalini-twist-beeswax-candle",
+    "large-taper",
+    "magick-spell-candles",
+    "mullein-torch",
+    "small-taper",
+    "birthday-candle-bundle",
+    "beeswax-number-candles",
+    "chime-candle",
+    "1-oz-beeswax",
+    "cathedral-grimoire-page-pack-printable",
+    "medieval-cathedral-grimoire-page-pack-printable-half-sized",
+]
+
+SHOP_CATEGORIES = [
+    {
+        "name": "Candles",
+        "slug": "candles",
+        "slugs": [
+            "kundalini-twist-beeswax-candle",
+            "large-taper",
+            "magick-spell-candles",
+            "mullein-torch",
+            "small-taper",
+            "birthday-candle-bundle",
+            "beeswax-number-candles",
+            "chime-candle",
+        ],
+    },
+    {
+        "name": "Beeswax",
+        "slug": "beeswax",
+        "slugs": ["1-oz-beeswax"],
+    },
+    {
+        "name": "Printables",
+        "slug": "printables",
+        "slugs": [
+            "cathedral-grimoire-page-pack-printable",
+            "medieval-cathedral-grimoire-page-pack-printable-half-sized",
+        ],
+    },
+]
+
+SHOP_CATEGORY_ALIASES = {
+    "beeswax-candles": "candles",
+    "printable": "printables",
+    "grimoire-printable": "printables",
+    "digital-downloads": "printables",
+}
+
 
 def tag_slug(tag: str) -> str:
     return str(tag).strip().rstrip("]").strip().lower().replace(" ", "-")
@@ -132,6 +183,27 @@ def load_dir(folder: Path) -> list[dict]:
 def pick_by_slug(items: list[dict], slugs: list[str]) -> list[dict]:
     by_slug = {item.get("slug"): item for item in items}
     return [by_slug[slug] for slug in slugs if slug in by_slug]
+
+
+def shop_groups(products: list[dict]) -> list[dict]:
+    known = {slug for cat in SHOP_CATEGORIES for slug in cat["slugs"]}
+    groups = []
+    for cat in SHOP_CATEGORIES:
+        groups.append(
+            {
+                "name": cat["name"],
+                "slug": cat["slug"],
+                "products": pick_by_slug(products, cat["slugs"]),
+            }
+        )
+    leftover = [item for item in products if item.get("slug") not in known]
+    if leftover:
+        groups.append({"name": "More", "slug": "more", "products": leftover})
+    return groups
+
+
+def shop_nav() -> list[dict]:
+    return [{"name": cat["name"], "slug": cat["slug"]} for cat in SHOP_CATEGORIES]
 
 
 def heading_rng(text: str) -> random.Random:
@@ -285,7 +357,37 @@ def main() -> None:
             **blog_nav,
         ),
     )
-    write(out_path("/shop/"), render_page(jinja, "list.html", title="Shop", heading="Shop", items=products, kind="product", note="Checkout is not available on this site. Email to inquire about a piece, or visit the Etsy shop if it is still listed."))
+    shop_items = pick_by_slug(products, SHOP_ORDER)
+    seen = {item.get("slug") for item in shop_items}
+    shop_items.extend(item for item in products if item.get("slug") not in seen)
+    categories = shop_nav()
+    groups = shop_groups(shop_items)
+    write(
+        out_path("/shop/"),
+        render_page(
+            jinja,
+            "shop.html",
+            title="Shop",
+            heading="Shop",
+            shop_categories=categories,
+            shop_groups=groups,
+        ),
+    )
+    for cat in SHOP_CATEGORIES:
+        items = pick_by_slug(shop_items, cat["slugs"])
+        page = render_page(
+            jinja,
+            "shop.html",
+            title=f"{cat['name']} — Shop",
+            heading="Shop",
+            items=items,
+            shop_categories=categories,
+            active_shop=cat["slug"],
+        )
+        write(out_path(f"/shop/{cat['slug']}/"), page)
+        for alias, target in SHOP_CATEGORY_ALIASES.items():
+            if target == cat["slug"]:
+                write(out_path(f"/shop/{alias}/"), page)
     write(out_path("/discontinued/"), render_page(jinja, "list.html", title="Previous Collections", heading="Previous Collections", items=discontinued, kind="product"))
     write(out_path("/videos/"), render_page(jinja, "list.html", title="Videos", heading="Videos", items=videos, kind="video"))
     write(out_path("/free-digital-downloads/"), render_page(jinja, "list.html", title="Freebies", heading="Free Digital Grimoire Pages", items=freebies, kind="freebie"))

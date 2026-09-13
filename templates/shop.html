@@ -1,0 +1,40 @@
+<div class="page-hero">
+  <div class="wrap page-hero-title">
+    <span class="title-star" aria-hidden="true">✷</span>
+    <h1>{{ heading }}</h1>
+    <span class="title-star" aria-hidden="true">✷</span>
+  </div>
+</div>
+<div class="wrap band">
+  <nav class="blog-browse shop-browse" aria-label="Shop categories">
+    <div class="browse-row">
+      <span class="browse-label">Shop by type</span>
+      <div class="browse-chips">
+        <a class="chip{% if not active_shop %} is-active{% endif %}" href="/shop/"{% if not active_shop %} aria-current="page"{% endif %}>All</a>
+        {% for cat in shop_categories %}
+        <a class="chip{% if active_shop == cat.slug %} is-active{% endif %}" href="/shop/{{ cat.slug }}/"{% if active_shop == cat.slug %} aria-current="page"{% endif %}>{{ cat.name }}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </nav>
+  {% if shop_groups %}
+    {% for group in shop_groups %}
+    {% if group.products %}
+    <section class="shop-group" id="{{ group.slug }}">
+      <h2 class="shop-group-title">{{ group.name }}</h2>
+      <div class="grid product-grid">
+        {% for item in group.products %}
+        {% include "_product_card.html" %}
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+    {% endfor %}
+  {% else %}
+  <div class="grid product-grid">
+    {% for item in items %}
+    {% include "_product_card.html" %}
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>

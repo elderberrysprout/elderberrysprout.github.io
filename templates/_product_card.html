@@ -1,0 +1,8 @@
+<article class="card">
+  {% if item.image %}<a href="{{ item.permalink }}"><img src="{{ item.image }}" alt="{{ item.title }}"></a>{% endif %}
+  <div class="card-body">
+    {% if item.sold_out %}<div class="sold">Sold Out</div>{% endif %}
+    <h3><a href="{{ item.permalink }}">{{ item.title }}</a></h3>
+    {% if item.price %}<div class="price">{{ item.price }}</div>{% endif %}
+  </div>
+</article>
