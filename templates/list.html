@@ -33,7 +33,7 @@
     {% endif %}
   </nav>
   {% endif %}
-  <div class="grid{% if kind == 'product' %} product-grid{% elif kind == 'post' %} post-grid{% endif %}">
+  <div class="grid{% if kind == 'product' %} product-grid{% elif kind == 'post' %} post-grid{% elif kind == 'freebie' %} freebie-grid{% endif %}">
     {% for item in items %}
     <article class="card">
       {% if item.image %}<a href="{{ item.permalink }}"><img src="{{ item.image }}" alt="{{ item.title }}"></a>{% endif %}
