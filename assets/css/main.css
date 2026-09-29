@@ -404,6 +404,14 @@ main > .product {
 }
 .page-centered .signup-note { text-align: center; }
 .prose img { display: block; margin: 1.2rem auto; }
+.prose img.about-portrait {
+  max-width: 24rem;
+  width: min(100%, 24rem);
+  margin: 0.15rem auto 1.5rem;
+}
+.sign-off {
+  margin: 2.4rem 0 0;
+}
 .prose .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));

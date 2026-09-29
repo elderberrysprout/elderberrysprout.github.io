@@ -3,7 +3,7 @@ title: About
 permalink: /about/
 ---
 
-![Marina](/assets/images/marina.jpg)
+![Marina](/assets/images/marina.jpg){: .about-portrait}
 
 Marina has been making candles since 2018.
 
@@ -30,3 +30,8 @@ I began my magical practice at the age of 3, when I began asking Santa Claus for
 Over the years since then the most consistent part of my magical practice has always been journaling. Showing up for myself in that way consistently has been a transformative experience over the years. Now after a couple of years I can add candle magic to that favorite practice list as well!
 
 I would love to share more about my magical practice with you over at the [Magic Blog](/magic-blog/)!
+
+With much love,
+{: .sign-off}
+
+![](/assets/images/1634175113380-f116ic73p6wc85p4izi3_marina-signature.png){: .signature}
