@@ -3,6 +3,7 @@ title: Mullein Hag Torch - Witches Candle
 price: from $11.00
 sold_out: false
 permalink: /shop/p/mullein-torch/
+etsy_url: https://www.etsy.com/listing/4597980712/mullein-hag-torch-witches-candle
 image: /assets/images/1695183279961-tzjb3gn4ecpzaflw10ed_thumb-4x3.jpg
 images:
 - /assets/images/1695183279961-tzjb3gn4ecpzaflw10ed_thumb-4x3.jpg
